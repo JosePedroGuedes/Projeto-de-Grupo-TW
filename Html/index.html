@@ -8,13 +8,41 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Adicione seu próprio arquivo de estilo CSS, se necessário -->
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Adicione estilos personalizados aqui, se necessário */
+    .img-card, .img-info {
+      height: 300px; /* Altura fixa para todas as imagens */
+      object-fit: cover; /* Garante que a imagem cubra o container */
+    }
+
+    .img-carousel {
+      height: 600px;
+      object-fit: cover;
+    }
+
+    .search-section {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px; /* Adiciona espaço entre o search e a próxima seção */
+    }
+
+    .search-icon {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Barra de navegação -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">Agência de Hotéis</a>
+      <a class="navbar-brand" href="#">
+        <img src="../Assets/logo.png" alt="Logo" height="30">
+        Agência de Hotéis
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,13 +66,13 @@
   <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="../Assets/pexels-colon-freld-2373201.jpg" class="d-block w-100" alt="Imagem 1">
+        <img src="../Assets/pexels-colon-freld-2373201.jpg" class="d-block w-100 img-carousel" alt="Imagem 1">
       </div>
       <div class="carousel-item">
-        <img src="../Assets/pexels-pixabay-258154.jpg" class="d-block w-100" alt="Imagem 2">
+        <img src="../Assets/pexels-pixabay-258154.jpg" class="d-block w-100 img-carousel" alt="Imagem 2">
       </div>
       <div class="carousel-item">
-        <img src="../Assets/pexels-thanhhoa-tran-1488327.jpg" class="d-block w-100" alt="Imagem 3">
+        <img src="../Assets/pexels-thanhhoa-tran-1488327.jpg" class="d-block w-100 img-carousel" alt="Imagem 3">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -58,36 +86,38 @@
   </div>
 
   <!-- Seção de pesquisa -->
-  <div class="container mt-5">
-    <h2>Encontre seu Hotel Ideal</h2>
-    <form>
-      <div class="row">
-        <div class="col-md-3 mb-3">
-          <label for="destino">Destino</label>
-          <input type="text" class="form-control" id="destino" placeholder="Informe o destino" required>
+  <div class="search-section">
+    <div class="container mt-5">
+      <h2>Encontre seu Hotel Ideal</h2>
+      <form>
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <label for="destino">Destino</label>
+            <input type="text" class="form-control" id="destino" placeholder="Informe o destino" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="checkin">Check-in</label>
+            <input type="date" class="form-control" id="checkin" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="checkout">Check-out</label>
+            <input type="date" class="form-control" id="checkout" required>
+          </div>
+          <div class="col-md-1 mb-3">
+            <label for="hospedes">Hóspedes</label>
+            <input type="number" class="form-control" id="hospedes" min="1" required>
+          </div>
+          <div class="col-md-1 mb-3">
+            <label for="quartos">Quartos</label>
+            <input type="number" class="form-control" id="quartos" min="1" required>
+          </div>
+          <div class="col-md-1 mb-3">
+            <label for="searchBtn"></label>
+            <button class="btn btn-primary btn-block" type="submit">Pesquisar</button>
+          </div>
         </div>
-        <div class="col-md-3 mb-3">
-          <label for="checkin">Check-in</label>
-          <input type="date" class="form-control" id="checkin" required>
-        </div>
-        <div class="col-md-3 mb-3">
-          <label for="checkout">Check-out</label>
-          <input type="date" class="form-control" id="checkout" required>
-        </div>
-        <div class="col-md-1 mb-3">
-          <label for="hospedes">Hóspedes</label>
-          <input type="number" class="form-control" id="hospedes" min="1" required>
-        </div>
-        <div class="col-md-1 mb-3">
-          <label for="quartos">Quartos</label>
-          <input type="number" class="form-control" id="quartos" min="1" required>
-        </div>
-        <div class="col-md-1 mb-3">
-          <label for="searchBtn"></label>
-          <button class="btn btn-primary btn-block" type="submit">Pesquisar</button>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 
   <!-- Seção de hotéis populares -->
@@ -97,35 +127,63 @@
       <!-- Card 1 -->
       <div class="col-md-4 mb-4">
         <div class="card">
-          <img src="../Assets/pexels-colon-freld-2373201.jpg" class="card-img-top" alt="Hotel 1">
+          <img src="../Assets/pexels-colon-freld-2373201.jpg" class="card-img-top img-card" alt="Hotel 1">
           <div class="card-body">
-            <h5 class="card-title">Hotel 1</h5>
+            <h5 class="card-title">Cidade 1</h5>
+            <p class="card-text">A partir de $100 por noite | 50 Hoteis</p>
             <p class="card-text">Descrição do hotel 1.</p>
-            <a href="#" class="btn btn-primary">Ver Detalhes</a>
+            <a href="#" class="btn btn-primary">Saber Mais</a>
           </div>
         </div>
       </div>
       <!-- Card 2 -->
       <div class="col-md-4 mb-4">
         <div class="card">
-          <img src="../Assets/pexels-pixabay-258154.jpg" class="card-img-top" alt="Hotel 2">
+          <img src="../Assets/pexels-pixabay-258154.jpg" class="card-img-top img-card" alt="Hotel 2">
           <div class="card-body">
-            <h5 class="card-title">Hotel 2</h5>
+            <h5 class="card-title">Cidade 2</h5>
+            <p class="card-text">A partir de $120 por noite | 40 Hoteis</p>
             <p class="card-text">Descrição do hotel 2.</p>
-            <a href="#" class="btn btn-primary">Ver Detalhes</a>
+            <a href="#" class="btn btn-primary">Saber Mais</a>
           </div>
         </div>
       </div>
       <!-- Card 3 -->
       <div class="col-md-4 mb-4">
         <div class="card">
-          <img src="../Assets/pexels-thanhhoa-tran-1488327.jpg" class="card-img-top" alt="Hotel 3">
+          <img src="../Assets/pexels-thanhhoa-tran-1488327.jpg" class="card-img-top img-card" alt="Hotel 3">
           <div class="card-body">
-            <h5 class="card-title">Hotel 3</h5>
+            <h5 class="card-title">Cidade 3</h5>
+            <p class="card-text">A partir de $90 por noite | 60 Hoteis</p>
             <p class="card-text">Descrição do hotel 3.</p>
-            <a href="#" class="btn btn-primary">Ver Detalhes</a>
+            <a href="#" class="btn btn-primary">Saber Mais</a>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Seção de informações sobre o site -->
+  <div class="container mt-5">
+    <h2>Conheça a Sua Agência de Hotéis</h2>
+    <div class="row">
+      <!-- Coluna 1 -->
+      <div class="col-md-4 mb-4">
+        <img src="../Assets/icon1.png" alt="Ícone 1" class="img-fluid mb-3 img-info">
+        <h5>Destinos Incríveis</h5>
+        <p>Explore uma variedade de destinos incríveis ao redor do mundo. Encontre o local perfeito para a sua estadia.</p>
+      </div>
+      <!-- Coluna 2 -->
+      <div class="col-md-4 mb-4">
+        <img src="../Assets/icon2.png" alt="Ícone 2" class="img-fluid mb-3 img-info">
+        <h5>Reservas Fáceis</h5>
+        <p>Faça reservas de hotéis de forma rápida e fácil. Garanta o melhor preço para a sua estadia.</p>
+      </div>
+      <!-- Coluna 3 -->
+      <div class="col-md-4 mb-4">
+        <img src="../Assets/icon3.png" alt="Ícone 3" class="img-fluid mb-3 img-info">
+        <h5>Satisfação Garantida</h5>
+        <p>Oferecemos a garantia de satisfação do cliente. Tenha uma experiência incrível em sua viagem.</p>
       </div>
     </div>
   </div>
