@@ -19,6 +19,19 @@
       height: 600px;
       object-fit: cover;
     }
+
+    .search-section {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px; /* Adiciona espaço entre o search e a próxima seção */
+    }
+
+    .search-icon {
+      font-size: 24px;
+      margin-right: 10px;
+    }
   </style>
 </head>
 <body>
@@ -73,36 +86,38 @@
   </div>
 
   <!-- Seção de pesquisa -->
-  <div class="container mt-5">
-    <h2>Encontre seu Hotel Ideal</h2>
-    <form>
-      <div class="row">
-        <div class="col-md-3 mb-3">
-          <label for="destino">Destino</label>
-          <input type="text" class="form-control" id="destino" placeholder="Informe o destino" required>
+  <div class="search-section">
+    <div class="container mt-5">
+      <h2>Encontre seu Hotel Ideal</h2>
+      <form>
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <label for="destino">Destino</label>
+            <input type="text" class="form-control" id="destino" placeholder="Informe o destino" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="checkin">Check-in</label>
+            <input type="date" class="form-control" id="checkin" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="checkout">Check-out</label>
+            <input type="date" class="form-control" id="checkout" required>
+          </div>
+          <div class="col-md-1 mb-3">
+            <label for="hospedes">Hóspedes</label>
+            <input type="number" class="form-control" id="hospedes" min="1" required>
+          </div>
+          <div class="col-md-1 mb-3">
+            <label for="quartos">Quartos</label>
+            <input type="number" class="form-control" id="quartos" min="1" required>
+          </div>
+          <div class="col-md-1 mb-3">
+            <label for="searchBtn"></label>
+            <button class="btn btn-primary btn-block" type="submit">Pesquisar</button>
+          </div>
         </div>
-        <div class="col-md-3 mb-3">
-          <label for="checkin">Check-in</label>
-          <input type="date" class="form-control" id="checkin" required>
-        </div>
-        <div class="col-md-3 mb-3">
-          <label for="checkout">Check-out</label>
-          <input type="date" class="form-control" id="checkout" required>
-        </div>
-        <div class="col-md-1 mb-3">
-          <label for="hospedes">Hóspedes</label>
-          <input type="number" class="form-control" id="hospedes" min="1" required>
-        </div>
-        <div class="col-md-1 mb-3">
-          <label for="quartos">Quartos</label>
-          <input type="number" class="form-control" id="quartos" min="1" required>
-        </div>
-        <div class="col-md-1 mb-3">
-          <label for="searchBtn"></label>
-          <button class="btn btn-primary btn-block" type="submit">Pesquisar</button>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 
   <!-- Seção de hotéis populares -->
