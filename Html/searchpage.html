@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Sua Agência de Hotéis</title>
+  <!-- Inclua o link para o arquivo CSS do Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Adicione seu próprio arquivo de estilo CSS, se necessário -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Adicione estilos personalizados aqui, se necessário */
+    .img-card, .img-info {
+      height: 300px; /* Altura fixa para todas as imagens */
+      object-fit: cover; /* Garante que a imagem cubra o container */
+    }
+
+    .img-carousel {
+      height: 600px;
+      object-fit: cover;
+    }
+
+    .preferencias {
+      padding-top: 0.5%;
+      padding-left: 16%;
+      padding-right: 16%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2.5%;
+    }
+    
+    .preco button,
+    .ordenar select,
+    .numeroEstrelas select,
+    .avaliacao select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 30px;
+      border: 1px solid #ced4da;
+      box-shadow: 0 4px 20px silver;
+      background-color: #6d757d;
+      color: white;
+    }
+
+    .ordenar select:hover,
+    .numeroEstrelas select:hover,
+    .avaliacao select:hover {
+      -webkit-appearance: none;
+      appearance: none;
+      border: 1px solid #ced4da;
+    }
+
+    .numeroEstrelas select option,
+    .avaliacao select option,
+    .ordenar select option {
+      background-color: white;
+      color: #6d757d;
+    }
+
+    .preco label,
+    .avaliacao label,
+    .numeroEstrelas label,
+    .ordenar label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .preco .dropdown-menu form{
+      margin: 0;
+    }
+
+    .preco .dropdown-menu input{
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .preco .dropdown-menu button{
+      width: 100%;
+      background-color: #6d757d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+
+
+    .hotelContainer{
+      margin-bottom: 2.5%;
+      margin-right: 17%;
+      margin-left: 17%;
+      display: flex;
+      justify-content: space-between;
+      height: 200px;
+      border: 1px;
+      border-color: transparent;
+      border-style: solid;
+      border-radius: 30px;
+      box-sizing: border-box;
+      overflow: hidden;
+      box-shadow: 0 4px 20px silver;
+    }
+    
+    .hotel-img{ 
+      object-fit: cover; 
+      width: 30%;
+    }
+
+    .hotel-img:hover{
+      filter:brightness(1.5);
+      filter: contrast(0.7);
+      transition: 0.3s ease;
+      cursor: pointer;
+    }
+
+    .hotelContainerText {
+      width: 100%;
+      padding-left: 20px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hotelContainerText h1{
+      font-size: 40px;
+    }
+
+    .hotelContainerText h2, h3, h4{
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .verOferta {
+      border: none;
+      width: 40%;
+      background-color: #6d757d;
+      font-size: 20px;
+      color: white;
+    }
+
+    .verOferta:hover {
+      background-color: white;
+      color: #6d757d;
+      transition: 0.3s;
+      transform: scale(1.1) ease;
+    }
+  </style>
+  <script>
+    function enlargeImg(){
+      var theImage = document.getElementById("hotel-img");
+      theImage.width = theImage.width * 2;
+      theImage.height = theImage.height * 2;
+    };
+  </script>
+</head>
+<body>
+
+  <!-- Barra de navegação -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="../Assets/logo.png" alt="Logo" height="30">
+        Agência de Hotéis
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Destinos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Seção de pesquisa -->
+  <div class="container mt-5">
+    <h2>Encontre seu Hotel Ideal</h2>
+    <form>
+      <div class="row">
+        <div class="col-md-3 mb-3">
+          <label for="destino">Destino</label>
+          <input type="text" class="form-control" id="destino" placeholder="Informe o destino" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="checkin">Check-in</label>
+          <input type="date" class="form-control" id="checkin" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="checkout">Check-out</label>
+          <input type="date" class="form-control" id="checkout" required>
+        </div>
+        <div class="col-md-1 mb-3">
+          <label for="hospedes">Hóspedes</label>
+          <input type="number" class="form-control" id="hospedes" min="1" required>
+        </div>
+        <div class="col-md-1 mb-3">
+          <label for="quartos">Quartos</label>
+          <input type="number" class="form-control" id="quartos" min="1" required>
+        </div>
+        <div class="col-md-1 mb-3">
+          <label for="searchBtn"></label>
+          <button class="btn btn-primary btn-block" type="submit">Pesquisar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- preferências de pesquisa-->
+  <div class="preferencias">
+    <div class="preco">
+      <p>Preço (por noite):</p>
+      <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Escolher
+          </button>
+          <div class="dropdown-menu">
+              <form class="px-4 py-3">
+                  <div class="mb-3">
+                      <label for="minPreco" class="form-label">Mínimo</label>
+                      <input type="number" class="form-control" id="minPreco" placeholder="Mínimo">
+                  </div>
+                  <div class="mb-3">
+                      <label for="maxPreco" class="form-label">Máximo</label>
+                      <input type="number" class="form-control" id="maxPreco" placeholder="Máximo">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Aplicar</button>
+              </form>
+          </div>
+      </div>
+    </div>
+    <div class="numeroEstrelas">
+      <label for="">Número de Estrelas</label>
+      <select name="Número de Estrelas">
+        <option value="">---</option>
+        <option value="0-1">0-1 ★</i></option>
+        <option value="2">2 ★</i></option>
+        <option value="3">3 ★</i></option>
+        <option value="4">4 ★</i></option>
+        <option value="5">5 ★</i></option>
+      </select>
+    </div>
+    <div class="avaliacao">
+      <label for="">Avaliações</label>
+      <select name="Avaliações">
+        <option value="">---</option>
+        <option value="8,5+"><button class="botaoAvaliacao">8,5+</button> Excelente</option>
+        <option value="8,0+"><button class="botaoAvaliacao">8,0+</button> Muito Bom</option>
+        <option value="7,5+"><button class="botaoAvaliacao">7,5+</button> Bom</option>
+        <option value="7,0+"><button class="botaoAvaliacao">7,0+</button> Aceitável</option>
+      </select>
+    </div>
+    <div class="ordenar">
+      <label for="">Ordenar por:</label>
+      <select name="Ordenar por:">
+        <option value="">As nossas recomendações</option>
+        <option value="Preço (ascendente)">Preço (ascendente)</option>
+        <option value="Preço (ascendente)">Preço (ascendente)</option>
+        <option value="Avaliações">Avaliações</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Container do Hotel-->
+  <div class="hotelContainer">
+    <img class="hotel-img" src="placeholder.jpg" id="hotel-img" >
+    <div class="hotelContainerText">
+      <h1>Hotel Name</h1>
+      <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> hotel </h2>
+      <h3>City</h3>
+      <h4>10.0 (avaliações)</h4>
+    </div>
+    <button class="verOferta" href="#">100€<br><b>Ver Oferta <i class="fa fa-chevron-right"></i></b></button>
+  </div>
+
+  <div class="hotelContainer">
+    <img class="hotel-img" src="placeholder.jpg" >
+    <div class="hotelContainerText">
+      <h1>Hotel Name</h1>
+      <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> hotel </h2>
+      <h3>City</h3>
+      <h4>10.0 (avaliações)</h4>
+    </div>
+    <button class="verOferta" href="#">100€<br><b>Ver Oferta <i class="fa fa-chevron-right"></i></b></button>
+  </div>
+
+  <div class="hotelContainer">
+    <img class="hotel-img" src="placeholder.jpg">
+    <div class="hotelContainerText">
+      <h1>Hotel Name</h1>
+      <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> hotel </h2>
+      <h3>City</h3>
+      <h4>10.0 (avaliações)</h4>
+    </div>
+    <button class="verOferta" href="#">100€<br><b>Ver Oferta <i class="fa fa-chevron-right"></i></b></button>
+  </div>
+
+  <div class="hotelContainer">
+    <img class="hotel-img" src="placeholder.jpg">
+    <div class="hotelContainerText">
+      <h1>Hotel Name</h1>
+      <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> hotel </h2>
+      <h3>City</h3>
+      <h4>10.0 (avaliações)</h4>
+    </div>
+    <button class="verOferta" href="#">100€<br><b>Ver Oferta <i class="fa fa-chevron-right"></i></b></button>
+  </div>
+
+  <div class="hotelContainer">
+    <img class="hotel-img" src="placeholder.jpg">
+    <div class="hotelContainerText">
+      <h1>Hotel Name</h1>
+      <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> hotel </h2>
+      <h3>City</h3>
+      <h4>10.0 (avaliações)</h4>
+    </div>
+    <button class="verOferta" href="#">100€<br><b>Ver Oferta <i class="fa fa-chevron-right"></i></b></button>
+  </div>
+
+  <div class="hotelContainer">
+    <img class="hotel-img" src="placeholder.jpg">
+    <div class="hotelContainerText">
+      <h1>Hotel Name</h1>
+      <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> hotel </h2>
+      <h3>City</h3>
+      <h4>10.0 (avaliações)</h4>
+    </div>
+    <button class="verOferta" href="#">100€<br><b>Ver Oferta <i class="fa fa-chevron-right"></i></b></button>
+  </div>
+
+  <div class="hotelContainer">
+    <img class="hotel-img" src="placeholder.jpg">
+    <div class="hotelContainerText">
+      <h1>Hotel Name</h1>
+      <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> hotel </h2>
+      <h3>City</h3>
+      <h4>10.0 (avaliações)</h4>
+    </div>
+    <button class="verOferta" href="#">100€<br><b>Ver Oferta <i class="fa fa-chevron-right"></i></b></button>
+  </div>
+
+  <div class="hotelContainer">
+    <img class="hotel-img" src="placeholder.jpg">
+    <div class="hotelContainerText">
+      <h1>Hotel Name</h1>
+      <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> hotel </h2>
+      <h3>City</h3>
+      <h4>10.0 (avaliações)</h4>
+    </div>
+    <button class="verOferta" href="#">100€<br><b>Ver Oferta <i class="fa fa-chevron-right"></i></b></button>
+  </div>
+
+  <div class="hotelContainer">
+    <img class="hotel-img" src="placeholder.jpg">
+    <div class="hotelContainerText">
+      <h1>Hotel Name</h1>
+      <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> hotel </h2>
+      <h3>City</h3>
+      <h4>10.0 (avaliações)</h4>
+    </div>
+    <button class="verOferta" href="#">100€<br><b>Ver Oferta <i class="fa fa-chevron-right"></i></b></button>
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="bg-dark text-light text-center py-3">
+    <p>&copy; 2024 Sua Agência de Hotéis. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Inclua o link para o arquivo JavaScript do Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  </body>
+
+</html>
