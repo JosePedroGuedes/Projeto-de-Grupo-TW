@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4070f4;
+    background-image: url(../Assets/Main-Page/background-signup.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;       /*Imagem de Fundo de maneira a oucupar a tela toda, sem se repetir*/                            
+    background-attachment: fixed;
+    background-position: center;
+    column-gap: 30px;
+}
+
+
+.form{
+    position: absolute;
+    max-width: 430px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 6px;
+    backdrop-filter: blur(50px);
+    border-color: green;
+    border-width: 20px;
+}
+.form.signup{
+    opacity: 0;
+    pointer-events: none;
+}
+.forms.show-signup .form.signup{
+    opacity: 1;
+    pointer-events: auto;
+}
+.forms.show-signup .form.login{
+    opacity: 0;
+    pointer-events: none;
+}
+header{
+    font-size: 28px;
+    font-weight: 600;
+    color: #232836;
+    text-align: center;
+}
+form{
+    margin-top: 30px;
+}
+.form .field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+.field input,
+.field button{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+}
+
+.field input{
+    padding: 0 15px;
+    border: 1px solid#CACACA;
+}
+
+.form-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form-likn span,
+.form-link span a{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.form a {
+    text-decoration: none;
+    color: blue;
+}
+
+.form a:hover {
+    text-decoration: underline;
+}
+
+.field button {
+    color: white;
+    background-color: #0171d3;
+}
