@@ -1,3 +1,23 @@
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  background-color: rgba(35, 57, 198, 0.863);
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: rgba(24, 38, 131, 0.863);
+}
+
 .logo {
   padding-right: 180px;
   font-size: 30px;
@@ -56,4 +76,61 @@ nav a:hover{
 
 .text-right {
   text-align: right !important;
+}
+
+
+@media screen and (max-width: 767px){
+  p.text{
+    padding-left: 130px;
+    margin-top: 0;
+
+  }
+
+  p.card-text {
+    margin-bottom: 0;
+  }
+
+  nav a {
+  height: 100%;
+  padding: 0 10px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
+  }
+}
+
+
+@media only screen and (max-width: 770px) {
+  nav span, .ajuda{
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 770px){
+  i.bi {
+    width: 40px;
+  }
+
+  li {
+    padding-top: 0;
+  }
+
+  a {
+    padding-top: 30px;
+    font-size: 20px;
+  }
+
+  li.logo {
+    padding-right: 140px;
+  }
+
+}
+
+
+@media screen and (max-width: 415px){
+  li.logo {
+    padding-right: 110px;
+  }
 }

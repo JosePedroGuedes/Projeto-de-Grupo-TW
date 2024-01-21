@@ -8,7 +8,7 @@
   <!-- Inclua o link para o arquivo CSS do Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Adicione seu próprio arquivo de estilo CSS, se necessário -->
-  <link rel="stylesheet" href="/Css/searchstyle.css">
+  <link rel="stylesheet" href="../Css/searchstyle.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="../Css/style.css">
   <script src="https://kit.fontawesome.com/81b1d5eb71.js" crossorigin="anonymous"></script>
@@ -25,6 +25,8 @@
       <li class="ajuda"><a href="#"><i class="fa-sharp fa-solid fa-circle-info" style="margin-right: 7px;"></i><span>Ajuda</span></a></li>
     </ul>
   </nav>
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
   <!-- Seção de pesquisa -->
   <div class="container mt-5">
@@ -116,7 +118,7 @@
 
   <!-- Container do Hotel-->
   <div class="hotelContainer">
-    <img class="hotel-img" src="/Assets/Hotel-Sakura/Principal/Img1.jpg">
+    <img class="hotel-img" src="../Assets/Hotel-Sakura/Principal/Img1.jpg">
     <div class="hotelContainerText">
       <h1>PROSTYLE RYOKAN TOKYO ASAKUSA</h1>
       <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> hotel </h2>
@@ -124,10 +126,11 @@
       <h4>8.2 (avaliações)</h4>
     </div>
     <button class="verOferta"><a href="hotel_template.html">A partir de 150€<br><b>Ver Oferta <i class="fa fa-chevron-right"></i></b></a></button>
+    <button class="verOferta">A partir de 150€<br><b>Ver Oferta <i class="fa fa-chevron-right"></i></b></button>
   </div>
 
   <div class="hotelContainer">
-    <img class="hotel-img" src="/Assets/Main-Page/ONE@Tokyo.jpg" >
+    <img class="hotel-img" src="../Assets/Main-Page/ONE@Tokyo.jpg" >
     <div class="hotelContainerText">
       <h1>ONE@ TOKYO</h1>
       <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> hotel </h2>
@@ -138,7 +141,7 @@
   </div>
 
   <div class="hotelContainer">
-    <img class="hotel-img" src="/Assets/Main-Page/Four Seasons Hotel Kyoto.jpg" >
+    <img class="hotel-img" src="../Assets/Main-Page/Four Seasons Hotel Kyoto.jpg" >
     <div class="hotelContainerText">
       <h1>Four Seasons Hotel Kyoto</h1>
       <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> hotel </h2>
@@ -149,7 +152,7 @@
   </div>
 
   <div class="hotelContainer">
-    <img class="hotel-img" src="/Assets/Main-Page/ParkHotel.jpg">
+    <img class="hotel-img" src="../Assets/Main-Page/ParkHotel.jpg">
     <div class="hotelContainerText">
       <h1>HOTEL MYSTAYS Onsen Resort</h1>
       <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> hotel </h2>
@@ -160,7 +163,7 @@
   </div>
 
   <div class="hotelContainer">
-    <img class="hotel-img" src="/Assets/Search-Page/hotel-amanek.jpg">
+    <img class="hotel-img" src="../Assets/Search-Page/hotel-amanek.jpg">
     <div class="hotelContainerText">
       <h1>HOTEL AMANEK Asahikawa</h1>
       <h2></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> hotel </h2>
@@ -171,7 +174,7 @@
   </div>
 
   <div class="hotelContainer">
-    <img class="hotel-img" src="/Assets/Search-Page/hotel-natulux.jpg">
+    <img class="hotel-img" src="../Assets/Search-Page/hotel-natulux.jpg">
     <div class="hotelContainerText">
       <h1>Furano Natulux Hotel</h1>
       <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> hotel </h2>
@@ -182,7 +185,7 @@
   </div>
 
   <div class="hotelContainer">
-    <img class="hotel-img" src="/Assets/Search-Page/hotel-oyado.jpg">
+    <img class="hotel-img" src="../Assets/Search-Page/hotel-oyado.jpg">
     <div class="hotelContainerText">
       <h1>Oyado Koto No Yume</h1>
       <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> hotel </h2>
@@ -193,7 +196,7 @@
   </div>
 
   <div class="hotelContainer">
-    <img class="hotel-img" src="/Assets/Search-Page/hotel-nikko.jpg">
+    <img class="hotel-img" src="../Assets/Search-Page/hotel-nikko.jpg">
     <div class="hotelContainerText">
       <h1>Grand Nikko Tokyo Bay Maihama</h1>
       <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> hotel </h2>
@@ -204,7 +207,7 @@
   </div>
 
   <div class="hotelContainer">
-    <img class="hotel-img" src="/Assets/Search-Page/hotel-TheMana.jpg">
+    <img class="hotel-img" src="../Assets/Search-Page/hotel-TheMana.jpg">
     <div class="hotelContainerText">
       <h1>TheMana Village</h1>
       <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> hotel </h2>
@@ -278,6 +281,7 @@
 
  <!-- Bootstrap JS e Popper.js -->
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="../Js/top.js"></script>
 </body>
   
   </body>
