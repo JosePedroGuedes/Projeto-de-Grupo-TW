@@ -1,10 +1,4 @@
 
-/* Adicione estilos personalizados aqui, se necessário */
-.img-card, .img-info {
-    height: 300px; /* Altura fixa para todas as imagens */
-    object-fit: cover; /* Garante que a imagem cubra o container */
-  }
-
   .img-carousel {
     height: 600px;
     object-fit: cover;
