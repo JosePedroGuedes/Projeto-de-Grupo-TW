@@ -1,0 +1,219 @@
+/* Adicione estilos personalizados aqui, se necessário */
+
+
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-width: 10vh;
+}
+
+
+.logo {
+  padding-right: 180px;
+  font-size: 30px;
+}
+
+nav {
+  background-color: white;
+}
+
+nav ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  
+}
+
+nav li{
+  height: 50px;
+  padding-top: 16px;
+}
+
+nav a {
+  height: 100%;
+  padding: 0 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+nav a:hover{
+  background-color: white;
+}
+
+.img-card, .img-info {
+    height: 300px; /* Altura fixa para todas as imagens */
+    object-fit: cover; /* Garante que a imagem cubra o container */
+  }
+
+  .img-carousel {
+    height: 600px;
+    object-fit: cover;
+  }
+
+  .search-section {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px; /* Adiciona espaço entre o search e a próxima seção */
+  }
+
+  .search-icon {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+
+
+.hotels {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+/*Card Hoteis Populares*/
+.card{
+  width: 330px;
+  height: 390px;
+  box-shadow: 10px 10px 5px lightblue;
+}
+
+
+.checked {
+  color: orange;
+}
+
+.text {
+  padding-left: 160px;
+  padding-top: 5px;
+}
+
+.button-hotels {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  text-decoration: none;
+}
+
+.destination-img {
+  max-width: 190px;
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+
+.reserva-img {
+  max-width: 250px;
+  padding-left: 30px;
+  padding-bottom: 75px;
+  padding-top: 50px;
+}
+
+.satisfaction-img {
+  max-width: 190px;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  margin-left: 60px;
+}
+
+.text-agency{
+  padding-right: 50px;
+}
+
+.hr {
+  margin-top: 50px;
+}
+
+.py-5 {
+  padding-top: 3rem;
+  padding-bottom: 0rem !important; 
+  margin-bottom: 0rem;
+}
+
+
+/*Top 3 Hoteis card text fix */ 
+
+@media screen and (max-width: 1200px){
+  p.text{
+    padding-left: 100px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  p.text{
+    padding-left: 100px;
+  }
+}
+
+@media screen and (max-width: 990px){
+  p.text{
+    padding-left: 50px;
+  }
+
+  .reserva-img {
+    padding-left: 0;
+    padding-bottom: 45px;
+  }
+
+}
+
+@media screen and (max-width: 767px){
+  p.text{
+    padding-left: 130px;
+    margin-top: 0;
+
+  }
+
+  p.card-text {
+    margin-bottom: 0;
+  }
+
+  nav a {
+  height: 100%;
+  padding: 0 10px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
+  }
+}
+
+
+@media only screen and (max-width: 770px) {
+  nav span, .ajuda{
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 770px){
+  i.bi {
+    width: 40px;
+  }
+
+  li {
+    padding-top: 0;
+  }
+
+  a {
+    padding-top: 30px;
+    font-size: 20px;
+  }
+
+  li.logo {
+    padding-right: 140px;
+  }
+
+}
+
+
+@media screen and (max-width: 415px){
+  li.logo {
+    padding-right: 110px;
+  }
+}
