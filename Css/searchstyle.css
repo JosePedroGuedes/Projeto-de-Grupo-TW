@@ -21,8 +21,13 @@
     border-radius: 30px;
     border: 1px solid #ced4da;
     box-shadow: 0 4px 20px silver;
-    background-color: #6d757d;
+    background-color: #2f70ff;
     color: white;
+  }
+
+  .preco button:hover,
+  .preco button:enabled{
+    background-color: #2f70ff;
   }
 
   .ordenar select,
@@ -44,7 +49,7 @@
   .avaliacao select option,
   .ordenar select option {
     background-color: white;
-    color: #6d757d;
+    color: black;
   }
 
   .preco label,
@@ -66,7 +71,7 @@
 
   .preco .dropdown-menu button{
     width: 100%;
-    background-color: #6d757d;
+    background-color: #2f70ff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -125,17 +130,23 @@
   .verOferta {
     border: none;
     width: 40%;
-    background-color: #6d757d;
+    background-color: #2f70ff;
     font-size: 20px;
     color: white;
   }
 
   .verOferta:hover {
     background-color: white;
-    color: #6d757d;
+    color: #2f70ff;
     transition: 0.3s;
     transform: scale(1.1) ease;
   }
+
+  .verOferta a{
+    color: white;
+    text-decoration: none;
+  }
+  
 
   @media (max-width: 1000px) {
     .preferencias {
