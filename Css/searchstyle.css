@@ -134,18 +134,23 @@
     font-size: 20px;
     color: white;
   }
-
   .verOferta:hover {
-    background-color: white;
     color: #2f70ff;
+    background-color: white;
     transition: 0.3s;
     transform: scale(1.1) ease;
   }
-
+  .verOferta:hover,
+  .verOferta:hover a {
+    color: #2f70ff;
+    transition: 0.3s;
+  }
   .verOferta a{
     color: white;
     text-decoration: none;
   }
+
+
   
 
   @media (max-width: 1000px) {
