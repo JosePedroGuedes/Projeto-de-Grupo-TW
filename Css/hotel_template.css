@@ -28,3 +28,11 @@
 .overlay-text {
   font-size: 18px; /* Ajuste o tamanho do texto conforme necessário */
 }
+
+.number-text {
+  display: inline-block;
+}
+
+.text-right {
+  text-align: right !important;
+}
