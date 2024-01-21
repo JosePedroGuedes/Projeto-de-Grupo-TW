@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(./Assets/login-new.jpg);
+    background-image: url(../Assets/login-new.jpg);
     background-size: cover;
     background-repeat: no-repeat;       /*Imagem de Fundo de maneira a oucupar a tela toda, sem se repetir*/                            
     background-attachment: fixed;

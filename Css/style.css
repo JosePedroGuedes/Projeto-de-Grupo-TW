@@ -1,5 +1,50 @@
-
 /* Adicione estilos personalizados aqui, se necessário */
+
+
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-width: 10vh;
+}
+
+
+.logo {
+  padding-right: 180px;
+  font-size: 30px;
+}
+
+nav {
+  background-color: white;
+}
+
+nav ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  
+}
+
+nav li{
+  height: 50px;
+  padding-top: 16px;
+}
+
+nav a {
+  height: 100%;
+  padding: 0 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+nav a:hover{
+  background-color: white;
+}
+
 .img-card, .img-info {
     height: 300px; /* Altura fixa para todas as imagens */
     object-fit: cover; /* Garante que a imagem cubra o container */
@@ -10,178 +55,165 @@
     object-fit: cover;
   }
 
-  .preferencias {
-    padding-top: 0.5%;
-    padding-left: 16%;
-    padding-right: 16%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2.5%;
-  }
-  
-  .preco button,
-  .ordenar select,
-  .numeroEstrelas select,
-  .avaliacao select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 30px;
-    border: 1px solid #ced4da;
-    box-shadow: 0 4px 20px silver;
-    background-color: #6d757d;
-    color: white;
+  .search-section {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px; /* Adiciona espaço entre o search e a próxima seção */
   }
 
-  .ordenar select,
-  .numeroEstrelas select,
-  .avaliacao select {
-    margin-top: 11px;
+  .search-icon {
+    font-size: 24px;
+    margin-right: 10px;
   }
 
 
-  .ordenar select:hover,
-  .numeroEstrelas select:hover,
-  .avaliacao select:hover {
-    -webkit-appearance: none;
-    appearance: none;
-    border: 1px solid #ced4da;
-  }
+.hotels {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+/*Card Hoteis Populares*/
+.card{
+  width: 330px;
+  height: 390px;
+  box-shadow: 10px 10px 5px lightblue;
+}
 
-  .numeroEstrelas select option,
-  .avaliacao select option,
-  .ordenar select option {
-    background-color: white;
-    color: #6d757d;
-  }
 
-  .preco label,
-  .avaliacao label,
-  .numeroEstrelas label,
-  .ordenar label {
-    display: block;
+.checked {
+  color: orange;
+}
+
+.text {
+  padding-left: 160px;
+  padding-top: 5px;
+}
+
+.button-hotels {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  text-decoration: none;
+}
+
+.destination-img {
+  max-width: 190px;
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+
+.reserva-img {
+  max-width: 250px;
+  padding-left: 30px;
+  padding-bottom: 75px;
+  padding-top: 50px;
+}
+
+.satisfaction-img {
+  max-width: 190px;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  margin-left: 60px;
+}
+
+.text-agency{
+  padding-right: 50px;
+}
+
+.hr {
+  margin-top: 50px;
+}
+
+.py-5 {
+  padding-top: 3rem;
+  padding-bottom: 0rem !important; 
+  margin-bottom: 0rem;
+}
+
+
+/*Top 3 Hoteis card text fix */ 
+
+@media screen and (max-width: 1200px){
+  p.text{
+    padding-left: 100px;
     margin-bottom: 5px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  p.text{
+    padding-left: 100px;
+  }
+}
+
+@media screen and (max-width: 990px){
+  p.text{
+    padding-left: 50px;
   }
 
-  .preco .dropdown-menu form{
-    margin: 0;
+  .reserva-img {
+    padding-left: 0;
+    padding-bottom: 45px;
   }
 
-  .preco .dropdown-menu input{
-    width: 100%;
-    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 767px){
+  p.text{
+    padding-left: 130px;
+    margin-top: 0;
+
   }
 
-  .preco .dropdown-menu button{
-    width: 100%;
-    background-color: #6d757d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  p.card-text {
+    margin-bottom: 0;
   }
 
-  .hotelContainer{
-    margin-bottom: 2.5%;
-    margin-right: 17%;
-    margin-left: 17%;
-    display: flex;
-    justify-content: space-between;
-    height: 200px;
-    border: 1px;
-    border-color: transparent;
-    border-style: solid;
-    border-radius: 30px;
-    box-sizing: border-box;
-    overflow: hidden;
-    box-shadow: 0 4px 20px silver;
+  nav a {
+  height: 100%;
+  padding: 0 10px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
   }
-  
-  .hotel-img{ 
-    object-fit: cover; 
-    width: 30%;
+}
+
+
+@media only screen and (max-width: 770px) {
+  nav span, .ajuda{
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 770px){
+  i.bi {
+    width: 40px;
   }
 
-  .hotel-img:hover{
-    filter:brightness(1.5);
-    filter: contrast(0.7);
-    transition: 0.3s ease;
-    cursor: pointer;
+  li {
+    padding-top: 0;
   }
 
-  .hotelContainerText {
-    width: 100%;
-    padding-left: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .hotelContainerText h1{
-    font-size: 30px;
-  }
-
-  .hotelContainerText h2, h3, h4{
+  a {
+    padding-top: 30px;
     font-size: 20px;
-    text-decoration: none;
   }
 
-  .verOferta {
-    border: none;
-    width: 40%;
-    background-color: #6d757d;
-    font-size: 20px;
-    color: white;
+  li.logo {
+    padding-right: 140px;
   }
 
-  .verOferta:hover {
-    background-color: white;
-    color: #6d757d;
-    transition: 0.3s;
-    transform: scale(1.1) ease;
+}
+
+
+@media screen and (max-width: 415px){
+  li.logo {
+    padding-right: 110px;
   }
-
-  @media (max-width: 768px) {
-    .preferencias {
-      flex-direction: column !important;
-    }
-
-    .preco,
-    .ordenar,
-    .numeroEstrelas,
-    .avaliacao {
-      margin-bottom: 35px;
-    }
-
-        .hotelContainer {
-      flex-direction: column;
-      margin-right: 5%;
-      margin-left: 5%;
-      overflow: hidden;
-      height: 450px;
-    }
-
-    .hotel-img {
-      width: 100%;
-      max-width: 100%; 
-      height: 200px; 
-      object-fit: cover;
-      border-radius: 30px 30px 0 0;
-    }
-
-    .hotelContainerText {
-      width: 100%;
-      padding: 10px;
-      box-sizing: border-box;
-      text-align: center;
-    }
-
-    .verOferta {
-      width: 100%;
-      height: 150px;
-      border-radius: 0 0 30px 30px;
-    }
-  }
-  
+}
