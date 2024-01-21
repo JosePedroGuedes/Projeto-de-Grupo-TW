@@ -89,9 +89,10 @@
     box-shadow: 0 4px 20px silver;
   }
   
-  .hotel-img{ 
-    object-fit: cover; 
-    width: 30%;
+  .hotel-img{
+    width: 275px;
+    height: 200px;
+    object-fit: cover;
   }
 
   .hotel-img:hover{
