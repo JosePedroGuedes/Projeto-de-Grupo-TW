@@ -15,20 +15,6 @@
   filter: brightness(90%);
 }
 
-.overlay-content {
-  position: absolute;
-  top: 68%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  z-index: 2;
-}
-
-.overlay-text {
-  font-size: 18px; /* Ajuste o tamanho do texto conforme necessário */
-}
-
 .number-text {
   display: inline-block;
 }
